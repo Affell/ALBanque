@@ -1,7 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.axel.orange.NoraRobotRunner
--------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 76.693 s <<< FAILURE! - in com.axel.orange.NoraRobotRunner
-Scenario that 1st sample.(LoginLogout (Scenario that 1st sample.))  Time elapsed: 21.973 s  <<< FAILURE!
-java.lang.AssertionError: Fail: /!\ Unable to authenticate with provided credentials. /!\ [albanque]
-
