@@ -1,0 +1,191 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.frontpage{
+
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: stretch;
+	background-image: url("../img/banniere.jpg");	
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%
+
+}
+
+.top_div{
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: stretch;	
+	border-bottom:5px double black;
+	
+}
+
+.title_div{
+
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: stretch;
+
+
+}
+
+#title_top{
+	font-family: "Roboto", sans-serif;
+	font-size: 75px;
+}
+
+#box_username_div{
+	
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+	border-left: 5px double black;
+	height: 200px
+
+
+}
+
+.username_div{
+
+	display: flex;
+	flex-direction: row-reverse;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+	border-width:5px;
+ 	border-style:solid;
+ 	border-color:black;
+
+}
+
+#username{
+	padding-right:  50px;
+	font-family: "Roboto", sans-serif;
+	font-size: 25px;
+
+}
+
+.center_div{
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: stretch;
+	align-content: stretch;
+	padding-bottom: 150px;
+	padding-top: 100px;
+	
+
+}
+
+.solde_div{
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: stretch;
+	font-family: "Comic Sans MS", sans-serif;
+	font-size: 25px
+
+}
+
+#solde_text{
+
+	padding-right: 50px
+}
+#solde{
+	padding-right: 100px
+}
+
+.money_action_div{
+
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: stretch;
+
+}
+
+#addMoney{
+
+}
+#removeMoney{
+
+}
+
+.bottom_div{
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: stretch;
+	
+
+
+}
+
+.historique_div{
+
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: stretch;
+	align-content: stretch;
+
+
+}
+
+#historique_text{
+	font-family: "Roboto", sans-serif;
+	font-size: 20px;
+	padding-bottom: 10px;
+}
+
+.column_align_right{
+	text-align: right;
+}
+
+
+
+
+
+
+.pied_de_page{
+
+	
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	align-items: center;
+	align-content: stretch;
+	height: 50px;
+	padding-top:100px;
+
+}
+
+
+
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ALBanque - Création d'un compte</title>
+		<meta charset="utf-8" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../static/css/register_style.css">		
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<script type="text/javascript" src="../static/js/register.js"></script>
+	</head>
+
+	<body>
+		<div class="login-page">
+  		<div class="form">  
+		    <form class="login-form" method="POST" action="" onsubmit="return submitRegister();">
+		    	<h1>Créer un compte</h1>
+		    	<p id="error_div">{error_msg}</p>
+      			<input id="login"  type="text" placeholder="Nom d'utilisateur"/>
+      			<input id="password" type="password" placeholder="Mot de passe"/>
+      			<input id="confirm_password" type="password" placeholder="Confirmer le mot de passe"/>
+      			<input id="email" type="e-mail" placeholder="Adresse e-mail"/>
+      			<button id="create_button" type="submit" >Création du compte
+      				<i class="material-icons">create</i></button>
+      			
+    		</form>
+ 		</div>
+		</div>
+		
+	</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ALBanque - Accueil</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="../static/css/home_style.css">
+	<link rel="stylesheet" type="text/css" href="../static/datatables/datatables.min.css">		
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>  	
+  	<script src="../static/datatables/datatables.js"></script>   	
+  	<script type="text/javascript" src="../static/js/home.js"></script>
+  	<script type="text/javascript" src="../static/js/moneyactions.js"></script>
+
+
+  	
+</head>
+<body >
+	<div class="frontpage">
+		<div class="top_div">			
+			<div class="title_div">
+				<span id="title_top">ALBanque</span>
+			</div>			
+			<div id="box_username_div">
+				<div class="username_div">
+					<button id="disconnect" class="btn btn-danger btn-sm btn-block">Déconnexion</button>
+					<span id=username>{username}</span>
+
+				</div>
+			</div>
+
+		</div>
+		<div class="center_div">
+			
+			<div class="solde_div">
+				<span><strong id="solde_text">Solde:</strong></span>
+				<span id="solde">{solde}</span>				
+			</div>
+			<div class= "money_action_div">
+				<button id="addMoney" type="button" class="btn btn-success btn-lg btn-block">Ajouter de l'argent</button>
+				<button id="delMoney" type="button" class="btn btn-danger btn-lg btn-block">Retirer de l'argent</button>
+			</div>
+
+		</div>
+		<div class="bottom_div">
+			
+			<div class="historique_div">
+				<span id="historique_text"><u><i><strong> Historique des mouvements :</strong></i></u></span>
+				<div id="historique">
+					
+				</div>
+			</div>
+
+		</div>
+		<div class="pied_de_page">
+			<span>© 2019 - ALBanque</span>
+		</div>
+	</div>
+	
+</body>
+</html>
