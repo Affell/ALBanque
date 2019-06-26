@@ -49,7 +49,8 @@ def getMails():
           DBmail = c.fetchall()
           DBmails = []
           for row in DBmail:
-             DBmails.append(row)
+            print(row)
+            DBmails.append(row[0])
           conn.commit()
           return DBmails
 
@@ -121,12 +122,12 @@ def getSituation(login):
 #########################################     INSERT / UPDATE     ############################################################################
 
 def createCompte(login, mdp, mail):
-          print("Création d'un compte ...")
+          print(getAllTime() + "Connexion à la base de donnée pour la création d'un compte ( "+login+" )")
           try:
               c.execute("INSERT INTO logins VALUES (?, ?, ?, ?, ?)",(login, PasswdHash(mdp), mail,"0",0))
               c.execute("INSERT INTO argent VALUES (?,?)",(login,0))
               conn.commit()
-              print("Compte créé !")
+              print(getAllTime()+"Compte créé ( "+login+" )")
               return True
 
           except Exception:
@@ -151,8 +152,8 @@ def setMoney_add(user, money):
        c.execute("UPDATE argent SET money= ? WHERE login = ?",(money,user))
        conn.commit()
        creditAction(user, money - moneyDepart)
-       print("Vous avez bien credité " + str(money - moneyDepart) +" sur votre compte !")
-       print("Vous avez maintenant " + str(money) +" sur votre compte")
+       print(getAllTime() + user + " a crédité " + str(money - moneyDepart) +"€ sur son compte !")
+       ##print("Vous avez maintenant " + str(money) +" sur votre compte")
 
 def setMoney_del(user, money):
     moneyDepart = getMoney(user)
@@ -160,8 +161,8 @@ def setMoney_del(user, money):
        c.execute("UPDATE argent SET money= ? WHERE login = ?",(money,user))
        conn.commit()
        debitAction(user,moneyDepart - money)
-       print("Vous avez bien débité " + str(moneyDepart - money) +" sur votre compte !")
-       print("Vous avez maintenant " + str(money) +" sur votre compte")
+       print(getAllTime() + user + " a débité " + str(moneyDepart-money) +"€ sur son compte !")
+       ##print("Vous avez maintenant " + str(money) +" sur votre compte")
 
 def changeEmail(user,mail):
     if user:
@@ -210,6 +211,9 @@ def getTime():
         sec = "0"+sec
     time = str(hour+":"+minutes+"."+sec)
     return time
+
+def getAllTime():
+    return "["+getDate() + " "+getTime()+ "] : "
 
 
 

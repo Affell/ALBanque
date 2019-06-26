@@ -24,7 +24,7 @@ function generateArray(data) {
 	var content = content +"<tr>";
 
 	var content = content + "<td>"+data.historique[i].type+"</td>";
-	var content = content + "<td>"+data.historique[i].date_heure+"</td>";	
+	var content = content + "<td class='column_align_right'>"+data.historique[i].date_heure+"</td>";	
 	var content = content + "<td class='column_align_right'>"+data.historique[i].montant+"€</td>";
 
 	var content = content + "</tr>";

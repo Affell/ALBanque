@@ -1,7 +1,10 @@
+
+
 function submitLogin(){
 	var login = document.getElementById("login").value;
 	var password = document.getElementById("password").value;
   	if (login == null || login == "" || password == null || password == "") {
+  		document.getElementById("error_div").innerHTML = "LES CHAMPS BUG";
     	$("#error_div").show();
     	return false;
   	} else {
@@ -10,6 +13,7 @@ function submitLogin(){
 	          data : {
 	             user : login,
 	             password: password,
+	             
 	                 },
 	             type : 'POST',
 	             url : '/login'
@@ -21,8 +25,9 @@ function submitLogin(){
 	            window.location.href = data;
 	        }
       		
-    	}).fail(function(data){	        	        
-      		
+    	}).fail(function(jqXHR,errorThrown){	        	        
+      		document.getElementById("error_div").innerHTML = jqXHR.responseText;
+      		document.getElementById("titre").innerHTML = ipAdress;
       		$("#error_div").show();
       		
     	});
@@ -30,11 +35,24 @@ function submitLogin(){
 	return false;
 }
 
+
+
+
+
 $(document).ready(function(){
 	$("#create_account").click(function(){
-		window.location.href = "/register"
+		window.location.href = "/register";
 
 
 	})
+	$.get("https://api.ipify.org/?format=json",function(adress){
+
+
+		
+		
+
+
+	})
+	
 })
 

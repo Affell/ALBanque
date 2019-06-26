@@ -21,7 +21,7 @@ function submitRegister(){
 	        .done(function(data){	        	        
       		
       		if (data) {
-	      		 	if (data == "mail") {
+	      		 	if (data== "email") {
 		      			error_div.innerHTML = "Adresse e-mail invalide ou déjà utilisée";
 		      			$("#error_div").show();
 	      			}

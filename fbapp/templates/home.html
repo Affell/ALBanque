@@ -4,27 +4,27 @@
 	<title>ALBanque - Accueil</title>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" type="text/css" href="../static/css/home_style.css">
-	<link rel="stylesheet" type="text/css" href="../static/datatables/datatables.min.css">		
+	<link rel="stylesheet" type="text/css" href="../static/datatables/datatables.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>  	
-  	<script src="../static/datatables/datatables.js"></script>   	
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  	<script src="../static/datatables/datatables.js"></script>
   	<script type="text/javascript" src="../static/js/home.js"></script>
   	<script type="text/javascript" src="../static/js/moneyactions.js"></script>
 
 
-  	
+
 </head>
 <body >
 	<div class="frontpage">
-		<div class="top_div">			
+		<div class="top_div">
 			<div class="title_div">
 				<span id="title_top">ALBanque</span>
-			</div>			
+			</div>
 			<div id="box_username_div">
 				<div class="username_div">
 					<button id="disconnect" class="btn btn-danger btn-sm btn-block">Déconnexion</button>
-					<span id=username>{username}</span>
+					<span id=username></span>
 
 				</div>
 			</div>
@@ -34,11 +34,11 @@
 			
 			<div class="solde_div">
 				<span><strong id="solde_text">Solde:</strong></span>
-				<span id="solde">{solde}</span>				
+				<span id="solde"></span>
 			</div>
 			<div class= "money_action_div">
-				<button id="addMoney" type="button" class="btn btn-success btn-lg btn-block">Ajouter de l'argent</button>
-				<button id="delMoney" type="button" class="btn btn-danger btn-lg btn-block">Retirer de l'argent</button>
+				<button id="button_lanchAddMoney" type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#addMoneyModal">Ajouter de l'argent</button>
+				<button id="button_lanchDelMoney" type="button" class="btn btn-danger btn-lg btn-block"  data-toggle="modal" data-target="#removeMoneyModal">Retirer de l'argent</button>
 			</div>
 
 		</div>
@@ -54,6 +54,43 @@
 		</div>
 		<div class="pied_de_page">
 			<span>© 2019 - ALBanque</span>
+		</div>
+	</div>
+	<div class="modal fade" id="addMoneyModal" tabindex="-1" role="dialog" aria-labelledby="addMoneyLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+		    	<div class="modal-header">
+		        	<h5 class="modal-title" id="addMoneyModalLabel">Ajouter de l'argent</h5>
+		        	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		        		<span aria-hidden="true">&times;</span>
+		        	</button>
+		  	  	</div>
+		      	<div class="modal-body">
+		        	<input id="input_addMoney"  type="text" placeholder="Entrez un nombre entier pour ajouter de l'argent"/>
+		      	</div>
+		      	<div class="modal-footer">
+		        	<button id="button_addMoney" type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+		    	</div>
+		    </div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="removeMoneyModal" tabindex="-1" role="dialog" aria-labelledby="removeMoneyLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+		    	<div class="modal-header">
+		        	<h5 class="modal-title" id="removeMoneyModalLabel">Retirer de l'argent</h5>
+		        	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		        		<span aria-hidden="true">&times;</span>
+		        	</button>
+		  	  	</div>
+		      	<div class="modal-body">
+		        	<input id="input_removeMoney"  type="text" placeholder="Entrez un nombre entier pour retirer de l'argent"/>
+		      	</div>
+		      	<div class="modal-footer">
+		        	<button id="button_removeMoney" type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+		    	</div>
+		    </div>
 		</div>
 	</div>
 	

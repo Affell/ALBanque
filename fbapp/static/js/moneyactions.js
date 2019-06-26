@@ -1,9 +1,9 @@
 $(document).ready(function(){
-  $("#addMoney").click(function(){
+  $("#button_addMoney").click(function(){
 
 
   
-  var nb = prompt("Entre l'argent que tu veux ajouter", "");
+  var nb = document.getElementById("input_addMoney").value;
   if (nb == null || nb == "") {
     window.alert("Entrez un nombre correct !");
   	} else {
@@ -26,10 +26,10 @@ $(document).ready(function(){
     	});
  	}
  })
-$("#delMoney").click(function(){
+$("#button_removeMoney").click(function(){
  
   
-  var nb = prompt("Entre l'argent que tu veux soustraire", "");
+  var nb = document.getElementById("input_removeMoney").value;
   if (nb == null || nb == "") {
     window.alert("Entrez un nombre correct !");
   	} else {

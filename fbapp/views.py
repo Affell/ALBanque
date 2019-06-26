@@ -94,7 +94,7 @@ def register():
     res = cb.register(username,password,email)
     if res ==True:
         return "/"
-    else:
+    elif res=="email" or res=="sql":
         return res
 
 
