@@ -3,7 +3,7 @@
 # Created by: Axel
 
 import smtplib
-from lycee import randint
+from random import randint
 
 
 emetteur = "al.banque@outlook.com"

@@ -2,11 +2,8 @@
 
 # Created by: Axel
 
-from lycee import *
-import sqlite3
 import hashlib
 from fbapp import SqlConnexion as sql
-from flask_login import current_user
 
 
 compteActuel =""
@@ -145,12 +142,12 @@ def verifyPassMail(codeEntry):
 
 def register(newlogin, newmdp, mail):
           DBmails = getMails()
-          print(DBmails)
           if not(mail.__contains__("@")) or not(mail.__contains__(".fr")) or mail.startswith("@") or mail.startswith(".fr") or mail.startswith(".com"):
              if not(mail.__contains__(".com")):
                 return "email"
           if DBmails.__contains__(mail):
              return "email"
+
           return createCompte(newlogin,newmdp,mail)
 
 

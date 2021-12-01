@@ -14,8 +14,10 @@
 		<div id="login_page" class="login-page">
   		<div class="form">  
 		    <form class="login-form" method="POST" action="" onsubmit="return submitLogin();">
-		    	<h1 id=titre>Se connecter</h1>		    	
-		    	<p id="error_div">Nom d'utilisateur ou mot de passe incorrect</p>
+		    	<h1 id=titre>Se connecter</h1>
+				{% for message in get_flashed_messages() %}
+    				<p id="error_div">{{ message }}</p>
+    			{% endfor %}
       			<input id="login"  type="text" placeholder="Nom d'utilisateur"/>
       			<input id="password" type="password" placeholder="Mot de passe"/>
       			<button id ="sign_in" type="submit" >Connexion</button>

@@ -1,4 +1,4 @@
-﻿from flask import Flask,render_template,jsonify,request,redirect,abort
+﻿from flask import Flask,render_template,jsonify,request,flash,abort,redirect,url_for
 from flask_login import current_user, login_user, login_required, LoginManager, logout_user
 from fbapp import CompteManager as cb
 from fbapp import Situation
@@ -75,7 +75,8 @@ def login():
         login_user(user,False,False,True)
         return("home")
     else:
-        abort(403)
+        flash("Nom d'utilisateur ou mot de passe incorect")
+        return redirect(url_for('index'))
 
 
 
@@ -85,6 +86,10 @@ def login():
 def register_page():
     return render_template('register.html')
 
+##@app.route('/register/authenticator')
+##def authenticator():
+
+
 @app.route('/api/register',methods=['POST'])
 def register():
 
@@ -93,7 +98,7 @@ def register():
     email = request.form["email"]
     res = cb.register(username,password,email)
     if res ==True:
-        return "/"
+        return "/register/authenticator"
     elif res=="email" or res=="sql":
         return res
 
@@ -108,6 +113,7 @@ def session():
 def disconnect():
     logout_user()
     return "/"
+
 
 
 

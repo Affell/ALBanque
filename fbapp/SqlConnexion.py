@@ -49,7 +49,6 @@ def getMails():
           DBmail = c.fetchall()
           DBmails = []
           for row in DBmail:
-            print(row)
             DBmails.append(row[0])
           conn.commit()
           return DBmails
@@ -63,13 +62,14 @@ def getMoney(login):
 
 def isLock(login):
     if login:
-       c.execute("SELECT LOCKED FROM logins WHERE login= ?", (login,))
-       DBLock = c.fetchone()[0]
-       conn.commit()
-       if DBLock == "1":
-          return True
-       else:
-            return False
+        c.execute("SELECT LOCKED FROM logins WHERE login= ?", (login,))
+        r= c.fetchone()
+        if r is not None and len(r) > 0:
+           DBLock = r[0]
+           conn.commit()
+           if DBLock == "1":
+              return True
+        return False
 
 def getNbErreurs(login):
     if login:
@@ -121,11 +121,12 @@ def getSituation(login):
 
 #########################################     INSERT / UPDATE     ############################################################################
 
-def createCompte(login, mdp, mail):
+def createCompte(login, mdp, mail, secret=""):
           print(getAllTime() + "Connexion à la base de donnée pour la création d'un compte ( "+login+" )")
           try:
               c.execute("INSERT INTO logins VALUES (?, ?, ?, ?, ?)",(login, PasswdHash(mdp), mail,"0",0))
               c.execute("INSERT INTO argent VALUES (?,?)",(login,0))
+              c.execute("INSERT INTO authenticator VALUES (?,?)",(login,secret))
               conn.commit()
               print(getAllTime()+"Compte créé ( "+login+" )")
               return True
